@@ -91,7 +91,7 @@ const useCandyMachine = (
           return;
         }
         setCandyGuard(candyGuard);
-        if (firstRun){
+        if (firstRun) {
           setfirstRun(false)
         }
       }
@@ -160,7 +160,7 @@ export default function Home() {
         return;
       }
       setFirstRun(false);
-      
+
       const { guardReturn, ownedTokens, ownedCoreAssets } = await guardChecker(
         umi, candyGuard, candyMachine, solanaTime
       );
@@ -227,7 +227,7 @@ export default function Home() {
                   height={230}
                   objectFit={'cover'}
                   alt={"project Image"}
-                  src={image}
+                  src={`https://aifuu.s3.eu-west-2.amazonaws.com/playerImages/li_wei.png`}
                 />
               </Box>
             </Center>
@@ -257,7 +257,7 @@ export default function Home() {
             </Stack>
           </CardBody>
         </Card >
-        { umi.identity.publicKey === candyMachine?.authority ? (
+        {umi.identity.publicKey === candyMachine?.authority ? (
           <>
             <Center>
               <Button backgroundColor={"red.200"} marginTop={"10"} onClick={onInitializerOpen}>Admin Menu</Button>
